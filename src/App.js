@@ -1,13 +1,14 @@
 import './App.css';
+import MessagesContainer from "./messages/MessagesContainer";
 
 function App() {
-  return (
-    <div>
-      Here is messages:
+    return (
+        <div>
+            Here is messages:
 
-
-    </div>
-  );
+            <MessagesContainer/>
+        </div>
+    );
 }
 
 export default App;

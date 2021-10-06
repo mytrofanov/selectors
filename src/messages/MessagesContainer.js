@@ -12,6 +12,8 @@ return <div>
 }
 
 }
+
+
 let MapStateToProps = (state) => {
     return {
         messages: state.MessagePage.messages

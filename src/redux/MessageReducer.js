@@ -1,4 +1,4 @@
-import {GetUserData} from "../api/api";
+import {GetMessages} from "../api/api";
 
 const SET_MESSAGES = 'SET_MESSAGES';
 
@@ -17,9 +17,11 @@ const MessageReducer = (state = initialState, action) => {
 }
 
 export const RequestMessages = () => {
-    return async (dispatch) => {
-        let data = await GetUserData();
-        dispatch(SetMessagesActionCreator(data))
+    return (dispatch) => {
+        GetMessages().then(data => {
+            dispatch(SetMessagesActionCreator(data))
+        })
+
     }
 
 }

@@ -14,7 +14,12 @@ class MessagesContainer extends React.Component {
 
     render() {
         return <div>
-            <Messages messages={this.props.messages}/>
+
+            {this.props.messages.map(u =>
+                <Messages userId={u.userId} id={u.id} title={u.title} body={u.body} key={u.id}/>)
+            }
+
+
         </div>
     }
 

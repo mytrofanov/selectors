@@ -1,8 +1,19 @@
 import axios from "axios";
 
-export const GetMessages = () => {
-   return axios.get("http://jsonplaceholder.typicode.com/posts")
-        .then (response => { return response.data;
-        })
-        .catch(error => {console.log(error)})
+
+
+const instance = axios.create({
+    withCredentials: true,
+    headers: {"API-KEY": "7d870823-54dd-449f-8b28-49f59a10c313"},
+    baseURL: `https://social-network.samuraijs.com/api/1.0/`
+})
+
+
+export const usersAPI = {
+    getUsers(currentPage = 1, pageSize = 10) {
+        return instance.get(`users?page=${currentPage}&count=${pageSize}`)
+            .then(response => {
+                return response.data;
+            });
+    }
 }

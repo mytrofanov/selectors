@@ -13,10 +13,8 @@ class MessagesContainer extends React.Component {
 
     componentDidMount() {
 
-        axios.get("https://social-network.samuraijs.com/api/1.0/users?count=10&page=1")
-            .then(response => {
-                this.props.setMessages(response.data);
-            });
+        let {currentPage, pageSize} = this.props;
+        this.props.setMessages(currentPage, pageSize);
     }
 
     render() {
@@ -58,7 +56,7 @@ class MessagesContainer extends React.Component {
                 </div>
 
 
-                <div>Отображено записей {this.props.messages.length} из   </div>
+                <div>Отображено записей {this.props.users.length} из   </div>
                 <b> Страница №   </b>
 
                 <div className="AllTables">
@@ -77,7 +75,7 @@ class MessagesContainer extends React.Component {
 
                                 </tr>
 
-                                {this.props.messages.map((post, index) =>
+                                {this.props.users.map((post, index) =>
 
                                     <tr key={index}>
 

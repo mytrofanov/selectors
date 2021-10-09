@@ -1,15 +1,12 @@
-export const Messages = ({userId, id, body, title}) => {
+export const Messages = ({id, name}) => {
   return (
       <div>
-          <b>ID пользователя:</b> {userId}
+          <b>ID пользователя:</b> {id}
+
+
           <div>
-              <b>ID идетификатор:</b> <span>{id}</span>
-          </div>
-          <b>Заголовок:</b>
-          <span>{title}</span>
-          <div>
-              <b>Текст:</b>
-              <span>{body}</span>
+
+              <span>{name}</span>
           </div>
 
 
